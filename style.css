@@ -1,0 +1,284 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Gloria Hallelujah', cursive;
+    background-image: linear-gradient(rgb(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5)), url("background.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    user-select: none;
+    overflow: hidden;
+}
+
+.picture {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.menu{
+    position: relative;
+    width: 600px;
+    height: 500px;
+}
+
+input{
+    font-family: 'Gloria Hallelujah', cursive;
+    outline: none;
+    border: none;
+    margin: 5px;
+}
+
+p{
+    font-size: 20pt;
+    color: rgb(114, 22, 189);
+    text-shadow: 1px 1.5px rgb(87, 0, 14);
+}
+
+/* ==== LEVEL POLE ==== */
+.lista{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 20px;
+}
+
+.box{
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 10%;
+    height: 20px;
+    width: 202px;
+
+}
+
+#level{
+    position: absolute;
+    height: 18px;
+    margin-left: 1px;
+    width: 0px;
+    transform-origin: left;
+    transform: scaleX(1);
+    background-color: rgb(0, 255, 136);       
+}
+
+#prehled {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+
+/* ============== SEKCE ============== */
+#formLekceList, #formPocetSlov, #game, #tabulkaVysledky{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 500px;
+    border: thin solid rgb(48, 48, 48);
+    border-radius: 10%;
+    padding: 0px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);    
+}
+
+/* ============== FORMULÁŘ LIST ============== */
+#formLekceList{
+    align-items: left;
+    justify-content: top;
+    visibility: visible;
+}
+
+#tabulkaLekci{
+    width: 580px;
+    margin: auto;
+    display: flex;
+}
+
+.sloupce {
+    width: 50%;
+}
+
+
+#lekceList input {
+    margin: 15px 2px;
+    cursor: pointer;
+}
+
+
+#lekceList label:hover {
+    font-size: 12pt;
+}
+
+#lekceList label {
+    cursor: pointer;  
+    font-size: 11pt;  
+}
+
+.pozn{
+    color: rgb(88, 88, 88);
+}
+
+#lekceList #pokracovat{
+    position: absolute;
+    margin-top: 60px;
+}
+
+
+/* ============== FORMULÁŘ POČET SLOV ============== */
+#formPocetSlov{
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+#pocetSlov{
+    width: 150px;
+}
+
+/* ===== HRAJEM ===== */
+#game{
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+#radek {
+    display: flex;
+    flex-direction: row;
+}
+
+#box-2{
+    position: relative;
+    transform-origin: center;    
+}
+
+@keyframes trep{
+    0% { transform: translateX(0px); border: 1px solid red; }
+    100% { transform: translateX(3px); border: 1px solid red;}
+}
+
+@keyframes trep2{
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(3px);}
+}
+
+/* ===== TABULKY VYHODNOCENI ===== */
+#tabulkaVysledky{
+    align-items: center;
+    /*justify-content: center;*/
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    height: auto;
+    width: 600px;
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10% 0% 0% 10%;
+}
+
+#tabulkaVysledky table {
+    width: 400px;
+    column-width: 200px;
+    border: 1px solid gray;
+    margin: 30px 0px;
+}
+
+#tabulkaVysledky p {
+    position: sticky;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    background-color: rgb(255, 247, 239);
+}
+
+#pocet_chyb, #pocet_chyb2{
+    color: red;
+}
+
+/* ===== CUDLIKY ===== */
+input[type="button"]{
+    /* -- zbavení se defaultního vzhledu čudlíku -- */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+        
+    position: relative;
+    margin-top: 30px; 
+    width: 140px;
+    height: 50px;
+    left: calc(50% - 70px);
+    border-radius: 5%;
+    background-color: rgb(0, 136, 248);
+    color: white;
+    font-weight: bolder;
+    transform-origin: center;
+    letter-spacing: 3px;
+    box-shadow: 0px 0px 20px rgba(37, 40, 180, 0.8);
+}
+
+/*input[type="button"]:link{
+    background-color: green;
+}
+
+input[type="button"]:visited{
+    background-color: green;
+}*/
+
+input[type="button"]:active{
+    background-color: rgb(0, 84, 153);
+    letter-spacing: 1px;
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 40px;
+}
+
+input[type="button"]:hover{
+    transform: scale(1.2);
+}
+
+/* ====== animace - hero ====== */
+#predek-gif, #zadek-gif {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+
+#predek-gif{
+    visibility: visible;
+}
+
+#zadek-gif{
+    visibility: hidden;
+}
+
+/*====== WELL DONE ====== */
+#wellDone{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(255, 0, 191), rgb(89, 7, 92));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    left: calc(50% - 75px);
+    top: calc(50% - 30px);
+    transform-origin: center;
+    opacity:0;
+}
+
+@keyframes msg{
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+}

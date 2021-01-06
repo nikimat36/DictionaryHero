@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+<title>Document</title>
+<script>
+</script>
+</head>
+<body id="telo">
+<div class="picture">
+<div class="menu">
+    <div id="formLekceList">
+        <p style="text-align: center;"> Choose which lessons you wanna practice.</p>
+        <form action="" name="lekceList" id="lekceList">
+            <div id="tabulkaLekci">
+                <div class="sloupce">
+                    <input type="checkbox" id="lekce0" value="0">
+                    <label for="lekce0">lesson 1 <span class="pozn">- Základy</span></label><br>
+                    <input type="checkbox" id="lekce1" value="1">
+                    <label for="lekce1">lesson 2 <span class="pozn">- Windows, Word, Excel</span></label><br>
+                    <input type="checkbox" id="lekce2" value="2">
+                    <label for="lekce2">lesson 3 <span class="pozn">- Sítě 1</span></label><br>
+                    <input type="checkbox" id="lekce3" value="3">
+                    <label for="lekce3">lesson 4 <span class="pozn">- Sítě 2</span></label><br>
+                </div>
+                <div class="sloupce">
+                    <input type="checkbox" id="lekce4" value="4">
+                    <label for="lekce4">lesson 5 <span class="pozn">- Sítě 3 (hojně používané)</span></label><br>
+                    <input type="checkbox" id="lekce5" value="5">
+                    <label for="lekce5">lesson 6 <span class="pozn">- Sítě 4 (nejpoužívanější)</span></label><br>
+                    <input type="checkbox" id="lekce6" value="6">
+                    <label for="lekce6">lesson 7 <span class="pozn">- WinSrv díl 3, 4 a 5</span></label><br>
+                    <input type="checkbox" id="lekce7" value="7">
+                    <label for="lekce7">lesson 8 <span class="pozn">- Programování</span></label><br>
+                </div>
+            </div>
+            <input type="button" value="CONTINUE" id="pokracovat" onClick="zahrnLekci();"><br><br>
+        </form>
+        <!-- ====== animace ======= -->
+    </div>
+
+    <div id="formPocetSlov">
+        <p style="text-align: center;">Word Range<br>
+            <span class="pozn">(max. is listed in the window)</span></p>
+        <form action="" id="pocetSlovF" onSubmit="return false;">
+            <input type="number" id="pocetSlov" min="0" onkeydown="pokus(this);" required >
+            <input type="button" value="START" id="start" onClick="startX();">
+        </form>
+    </div>
+
+    <div id="game">
+        <form action="">
+            <p style="text-align: center;">Press ENTER to submit Your answer</p>
+            <div id="radek">
+                <input type="text" id="box" value="" size="40" readonly >
+                <input type="text" id="box-2" value="" class="search" onkeydown="search(this)" >
+            </div>
+            <input type="button" value="Quit" id="btn" onclick="ukazTabulku()">
+        </form>
+        <br>
+
+        <div class="lista">
+            <div class="box">
+                <div id="level"></div>
+            </div>
+            <div id="prehled">0/0</div>
+            Mistakes: <div id="pocet_chyb"></div>
+        </div>
+    </div>
+
+    <div id="tabulkaVysledky">
+        <p>Mistakes: <span id="pocet_chyb2"></span></p>
+    </div>
+
+</div>
+<div id="wellDone"></div>
+<!-- ===== ANIMACE ====
+<div class="ram"></div>-->
+<img src="animace.gif" alt="predek" id="predek-gif">
+<img src="animace2.gif" alt="zadek-hhh" id="zadek-gif">
+</div>
+<script src="javascript2.js"></script>
+<script src="slovicka.js"></script>
+</body>
+</html>
